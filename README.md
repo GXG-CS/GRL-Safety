@@ -56,18 +56,18 @@ GRL-Safety/
 
 | Tier | Method | Reference |
 |---|---|---|
-| Topology only | DeepWalk | Perozzi et al., 2014 |
-| | Node2vec | Grover & Leskovec, 2016 |
-| Supervised GNN | GCN | Kipf & Welling, 2017 |
-| | GAT | Velickovic et al., 2018 |
-| | GraphSAGE | Hamilton et al., 2017 |
-| Self-supervised | BGRL | Thakoor et al., 2022 |
-| | GraphMAE | Hou et al., 2022 |
-| Graph foundation | GFT | Wang et al., 2024 |
-| | GIT | Wang et al., 2024 |
-| | UniGraph2 | He et al., 2025 |
-| | OFA | Liu et al., 2024 |
-| | LLaGA (Vicuna-7B) | Chen et al., 2024 |
+| Topology only | DeepWalk | https://arxiv.org/abs/1403.6652 |
+| | Node2vec | https://arxiv.org/abs/1607.00653 |
+| Supervised GNN | GCN | https://arxiv.org/abs/1609.02907 |
+| | GAT | https://arxiv.org/abs/1710.10903 |
+| | GraphSAGE | https://arxiv.org/abs/1706.02216 |
+| Self-supervised | BGRL | https://arxiv.org/abs/2102.06514 |
+| | GraphMAE | https://arxiv.org/abs/2205.10803 |
+| Graph foundation | GFT | https://arxiv.org/abs/2407.03953 |
+| | GIT | https://arxiv.org/abs/2412.03864 |
+| | UniGraph2 | https://arxiv.org/abs/2502.00806 |
+| | OFA | https://arxiv.org/abs/2310.00149 |
+| | LLaGA | https://arxiv.org/abs/2402.08170 |
 
 ## Datasets (25 text-attributed graphs)
 
@@ -152,18 +152,6 @@ dedicated scripts in the same directory.
 
 Common flags across runners include `--dataset`, `--seed`, and an output CSV
 path. All results are reported as mean ± std across n=5 random seeds.
-
-## Citation
-
-If you use GRL-Safety in your work, please cite:
-
-```bibtex
-@misc{grlsafety2026,
-  title  = {On the Safety of Graph Representation Learning},
-  year   = {2026},
-  url    = {https://github.com/GXG-CS/GRL-Safety}
-}
-```
 
 ## License
 
