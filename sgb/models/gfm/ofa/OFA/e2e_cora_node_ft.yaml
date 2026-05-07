@@ -1,0 +1,14 @@
+# GFM-Safety: single-task downstream FT on cora_node.
+# Loads pretrain encoder weights via --pretrained_weights then runs OFA's
+# native prompt-graph forward + subgraph dataloader.
+
+batch_size: 128
+eval_batch_size: 64
+dropout: 0.15
+lr: 0.001
+num_layers: 7
+JK: "none"
+task_names:
+  - "cora_node"
+d_multiple: [1]
+d_min_ratio: [1]

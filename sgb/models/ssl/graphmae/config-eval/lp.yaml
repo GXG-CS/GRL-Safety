@@ -1,0 +1,13 @@
+# GraphMAE Linear Probing (LP) config — unified across datasets
+#
+# Encoder (GAT) is frozen, sklearn LogisticRegression trained on
+# L2-normalized encoder embeddings via model.embed(g, x).
+# C selected via 5-point grid [0.01, 0.1, 1, 10, 100] on val set.
+#
+# Reference: GraphMAE original uses linear_prob=True with lr_f=0.01
+# (PyTorch linear eval). We use sklearn LogReg for consistency with BGRL LP.
+#
+# Architecture (must match joint pretrained checkpoint):
+#   - GAT encoder: 768d input, 768d hidden, 2 layers, 4 heads
+
+# LP uses sklearn, no torch training params needed.

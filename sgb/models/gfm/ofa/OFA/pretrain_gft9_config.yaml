@@ -1,0 +1,46 @@
+# OFA joint pretraining on the GFT-9 TAG corpus.
+# Hyperparameters from paper Appendix A.1.
+
+batch_size: 128
+eval_batch_size: 128
+num_layers: 7
+emb_dim: 768
+dropout: 0.15
+lr: 0.001
+l2: 0
+num_epochs: 50
+JK: "none"
+num_workers: 4
+
+task_names:
+  - "cora_node"
+  - "pubmed_node"
+  - "arxiv"
+  - "wikics"
+  - "WN18RR"
+  - "FB15K237"
+  - "chemhiv"
+  - "chemblpre"
+  - "chempcba"
+
+# Per-task sampling multiples (mirroring GFT pt_data.yaml weights).
+d_multiple:
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 10
+  - 1
+  - 0.1
+  - 0.1
+d_min_ratio:
+  - 0.1
+  - 0.1
+  - 0.1
+  - 0.1
+  - 0.1
+  - 0.1
+  - 0.1
+  - 0.1
+  - 0.1

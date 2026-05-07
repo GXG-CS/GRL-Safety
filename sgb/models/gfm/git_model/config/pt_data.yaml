@@ -1,0 +1,33 @@
+# GIT multi-dataset pretrain weights (ported from GFT's pt_data.yaml).
+#
+# Each top-level key is a "group" name selectable via --pretrain_dataset.
+# Values are per-dataset sampling weights used by build_weighted_train_nodes:
+#   - integer part N  -> repeat the dataset's task_node_idx N times
+#   - fractional part f -> additionally subsample f * len(task_node_idx) nodes
+# Datasets must be registered in sgb.data.tag_registry.
+
+all:
+  cora: 5
+  pubmed: 5
+  arxiv: 5
+  wikics: 5
+  WN18RR: 5
+  FB15K237: 10
+  chemhiv: 1
+  chemblpre: 0.1
+  chempcba: 0.1
+
+node:
+  cora: 5
+  pubmed: 5
+  arxiv: 5
+  wikics: 5
+
+link:
+  WN18RR: 5
+  FB15K237: 10
+
+graph:
+  chemhiv: 1
+  chemblpre: 0.1
+  chempcba: 0.1

@@ -1,0 +1,26 @@
+# GIT pretrain config (matching GIT's internal param names)
+input_dim: 768
+hidden_dim: 768
+num_layers: 2
+activation: relu
+backbone: sage
+normalize: batch
+dropout: 0.15
+epochs: 20
+lr: 0.0000001
+decay: 0.00000001
+bs: 4096
+fanout: 10
+use_schedular: true
+ema: 0.99
+feat_p: 0.2
+edge_p: 0.2
+feat_lambda: 1
+topo_lambda: 1
+topo_recon_ratio: 0.1
+sem_lambda: 1
+align_reg_lambda: 10.0
+multitask: false
+train_ratio: 1.0
+wandb_mode: offline
+log_every: 5

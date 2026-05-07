@@ -1,0 +1,18 @@
+# GraphMAE Fine-Tuning (FT) config — unified across datasets
+#
+# Encoder (GAT) is unfrozen, linear head trained end-to-end.
+# Parameters reference GraphMAE original downstream eval settings:
+#   - lr: 1e-3 (original LP uses lr_f=0.01; FT needs lower to not destroy pretrained weights)
+#   - weight_decay: 1e-4 (original weight_decay_f for cora/pubmed)
+#   - dropout: 0.2 (same as original in_drop)
+#
+# Architecture (must match joint pretrained checkpoint ckpts/graphmae/all/model.pt):
+#   - GAT encoder: 768d input, 768d hidden, 2 layers, 4 heads
+#   - decoder_type: mlp (not gat), norm: None
+#   - Linear head: 768 -> num_classes
+
+lr: 1e-3
+weight_decay: 1e-4
+dropout: 0.2
+max_epochs: 500
+patience: 200
