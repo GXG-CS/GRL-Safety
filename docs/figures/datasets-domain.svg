@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 268" role="img" aria-labelledby="dd-title dd-desc">
+  <title id="dd-title">25 evaluation datasets by domain</title>
+  <desc id="dd-desc">Horizontal bars showing dataset counts per domain from the paper benchmark.</desc>
+  <rect width="640" height="268" fill="#fafbfc"/>
+  <text x="320" y="26" text-anchor="middle" font-family="system-ui,Segoe UI,sans-serif" font-size="14" font-weight="700" fill="#1a2a3d">25 text-attributed graphs (eval)</text>
+  <text x="320" y="44" text-anchor="middle" font-family="system-ui,Segoe UI,sans-serif" font-size="10.5" fill="#5a6b7d">ChemBLPre / ChemPCBA: pretrain-only (not in the 25)</text>
+  <!-- max count 7, full bar width 360 -->
+  <g font-family="system-ui,Segoe UI,sans-serif" font-size="11">
+    <text x="118" y="72" text-anchor="end" fill="#334">Academic (NC)</text>
+    <rect x="128" y="60" width="360" height="16" rx="3" fill="#c9daf5" stroke="#7a9ccc"/>
+    <text x="498" y="72" fill="#1a2a3d" font-weight="600">7</text>
+
+    <text x="118" y="98" text-anchor="end" fill="#334">Molecule (GC)</text>
+    <rect x="128" y="86" width="360" height="16" rx="3" fill="#d5e8d8" stroke="#6fa87a"/>
+    <text x="498" y="98" fill="#1a2a3d" font-weight="600">7</text>
+
+    <text x="118" y="124" text-anchor="end" fill="#334">E-commerce (NC)</text>
+    <rect x="128" y="112" width="206" height="16" rx="3" fill="#f5e6c8" stroke="#c9a86a"/>
+    <text x="344" y="124" fill="#1a2a3d" font-weight="600">4</text>
+
+    <text x="118" y="150" text-anchor="end" fill="#334">Book (NC)</text>
+    <rect x="128" y="138" width="103" height="16" rx="3" fill="#ede4f7" stroke="#9a7fc2"/>
+    <text x="241" y="150" fill="#1a2a3d" font-weight="600">2</text>
+
+    <text x="118" y="176" text-anchor="end" fill="#334">Web (NC)</text>
+    <rect x="128" y="164" width="103" height="16" rx="3" fill="#e8dff5" stroke="#9a7fc2"/>
+    <text x="241" y="176" fill="#1a2a3d" font-weight="600">2</text>
+
+    <text x="118" y="202" text-anchor="end" fill="#334">Knowledge graph (LP)</text>
+    <rect x="128" y="190" width="103" height="16" rx="3" fill="#e0d8f0" stroke="#9a7fc2"/>
+    <text x="241" y="202" fill="#1a2a3d" font-weight="600">2</text>
+
+    <text x="118" y="228" text-anchor="end" fill="#334">Recommendation (LP)</text>
+    <rect x="128" y="216" width="51" height="16" rx="3" fill="#d8cef0" stroke="#9a7fc2"/>
+    <text x="187" y="228" fill="#1a2a3d" font-weight="600">1</text>
+  </g>
+  <text x="320" y="256" text-anchor="middle" font-family="system-ui,Segoe UI,sans-serif" font-size="10" fill="#5a6b7d">Bar length is proportional to dataset count (max 7)</text>
+</svg>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 200" role="img" aria-labelledby="rs-title rs-desc">
+  <title id="rs-title">How this site relates to the two codebases</title>
+  <desc id="rs-desc">GFM-Safety repository focuses on pretraining; GRL-Safety anonymous repo runs standardized safety evaluations.</desc>
+  <defs>
+    <filter id="sh" x="-2%" y="-2%" width="104%" height="104%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+  <rect width="720" height="200" fill="#fafbfc"/>
+  <text x="360" y="30" text-anchor="middle" font-family="system-ui,Segoe UI,sans-serif" font-size="13" font-weight="700" fill="#1a2a3d">Two repositories, one paper</text>
+  <g filter="url(#sh)">
+    <rect x="32" y="52" width="300" height="124" rx="10" fill="#f0f4fb" stroke="#6b8cc4" stroke-width="1.25"/>
+    <rect x="388" y="52" width="300" height="124" rx="10" fill="#f4faf6" stroke="#6ba888" stroke-width="1.25"/>
+  </g>
+  <text x="182" y="82" text-anchor="middle" font-family="system-ui,Segoe UI,sans-serif" font-size="13" font-weight="700" fill="#1a3d6e">GFM-Safety (GitHub)</text>
+  <text x="182" y="104" text-anchor="middle" font-family="system-ui,Segoe UI,sans-serif" font-size="10.5" fill="#3d5166">Shared pretraining runner</text>
+  <text x="182" y="122" text-anchor="middle" font-family="system-ui,Segoe UI,sans-serif" font-size="10.5" fill="#3d5166"><tspan font-family="ui-monospace,Menlo,monospace">pretrain.py</tspan> and configs</text>
+  <text x="182" y="148" text-anchor="middle" font-family="system-ui,Segoe UI,sans-serif" font-size="10" fill="#5a6b7d">This page documents that stack.</text>
+
+  <text x="538" y="82" text-anchor="middle" font-family="system-ui,Segoe UI,sans-serif" font-size="13" font-weight="700" fill="#1a4d3a">GRL-Safety (anonymous)</text>
+  <text x="538" y="104" text-anchor="middle" font-family="system-ui,Segoe UI,sans-serif" font-size="10.5" fill="#3d5166">Benchmark code + eval CLIs</text>
+  <text x="538" y="122" text-anchor="middle" font-family="system-ui,Segoe UI,sans-serif" font-size="10.5" fill="#3d5166"><tspan font-family="ui-monospace,Menlo,monospace">sgb/models/.../run_*.py</tspan></text>
+  <text x="538" y="148" text-anchor="middle" font-family="system-ui,Segoe UI,sans-serif" font-size="10" fill="#5a6b7d">Paper tables and protocols.</text>
+
+  <path d="M 344 114 L 376 114" stroke="#888" stroke-width="2" stroke-dasharray="6 4" fill="none"/>
+  <text x="360" y="108" text-anchor="middle" font-family="system-ui,Segoe UI,sans-serif" font-size="9" fill="#777">related</text>
+</svg>

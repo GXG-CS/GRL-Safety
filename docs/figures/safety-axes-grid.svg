@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 140" role="img" aria-labelledby="ax-title ax-desc">
+  <title id="ax-title">Five safety axes and headline metrics</title>
+  <desc id="ax-desc">Corruption, OOD, imbalance, fairness, and interpretation axes with representative metrics from the benchmark.</desc>
+  <rect width="900" height="140" fill="#fafbfc"/>
+  <text x="450" y="26" text-anchor="middle" font-family="system-ui,Segoe UI,sans-serif" font-size="13" font-weight="700" fill="#1a2a3d">Five standardized stress axes</text>
+  <g font-family="system-ui,Segoe UI,sans-serif">
+    <rect x="20" y="44" width="164" height="78" rx="8" fill="#fdeaea" stroke="#d48888"/>
+    <text x="102" y="68" text-anchor="middle" font-size="12" font-weight="700" fill="#5c2020">Corruption</text>
+    <text x="102" y="88" text-anchor="middle" font-size="9.5" fill="#5a3a3a">feature / structure noise</text>
+    <text x="102" y="106" text-anchor="middle" font-size="9.5" fill="#5a3a3a">acc, AUC drop</text>
+
+    <rect x="196" y="44" width="164" height="78" rx="8" fill="#eaf4fd" stroke="#6b9fd4"/>
+    <text x="278" y="68" text-anchor="middle" font-size="12" font-weight="700" fill="#1a3d5c">OOD</text>
+    <text x="278" y="88" text-anchor="middle" font-size="9.5" fill="#334d66">degree, time, scaffold, inductive</text>
+    <text x="278" y="106" text-anchor="middle" font-size="9.5" fill="#334d66">ID-OOD gap, MRR, Hits@10</text>
+
+    <rect x="372" y="44" width="164" height="78" rx="8" fill="#fff6e5" stroke="#d4a84a"/>
+    <text x="454" y="68" text-anchor="middle" font-size="12" font-weight="700" fill="#4d3a0a">Imbalance</text>
+    <text x="454" y="88" text-anchor="middle" font-size="9.5" fill="#5c4a22">rho in {5, 10, 20} long-tail</text>
+    <text x="454" y="106" text-anchor="middle" font-size="9.5" fill="#5c4a22">bAcc, macro-F1, recall</text>
+
+    <rect x="548" y="44" width="164" height="78" rx="8" fill="#f2eafa" stroke="#9a7fc2"/>
+    <text x="630" y="68" text-anchor="middle" font-size="12" font-weight="700" fill="#3a2450">Fairness</text>
+    <text x="630" y="88" text-anchor="middle" font-size="9.5" fill="#4a3a5c">structural, demographic</text>
+    <text x="630" y="106" text-anchor="middle" font-size="9.5" fill="#4a3a5c">gaps, delta SP / EO</text>
+
+    <rect x="724" y="44" width="156" height="78" rx="8" fill="#eaf7f2" stroke="#5daa8a"/>
+    <text x="802" y="68" text-anchor="middle" font-size="12" font-weight="700" fill="#143d30">Interpretation</text>
+    <text x="802" y="88" text-anchor="middle" font-size="9.5" fill="#2d4a3f">edge / atom saliency</text>
+    <text x="802" y="106" text-anchor="middle" font-size="9.5" fill="#2d4a3f">GraphFramEx fidelity</text>
+  </g>
+</svg>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="GFM-Safety and GRL-Safety: graph foundation model training plus standardized safety evaluation on text-attributed graphs."
+    />
+    <title>GRL-Safety</title>
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-brand" href="#top">GRL-Safety</a>
+        <div class="header-nav-wrap">
+          <nav class="nav-group nav-onpage" aria-label="On this page">
+            <ul class="nav-list">
+
+            </ul>
+          </nav>
+          <nav class="nav-group" aria-label="External resources">
+            <ul class="nav-list">
+              <li><a href="https://github.com/GXG-CS/GRL-Safety">GitHub</a></li>
+              <li>
+                <a href="https://openreview.net/pdf?id=6dFrUSgvzE" rel="noopener noreferrer" target="_blank">Paper</a>
+              </li>
+              <!-- <li>
+                <a href="https://openreview.net/forum?id=6dFrUSgvzE" rel="noopener noreferrer" target="_blank">OpenReview</a>
+              </li>
+              <li>
+                <a href="https://anonymous.4open.science/r/GRL-Safety-D5B1/README.md" rel="noopener noreferrer" target="_blank"
+                  >Benchmark</a
+                > -->
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <div class="hero-banner" id="top">
+      <div class="hero-banner-inner">
+        <h1 class="hero-title" id="hero-heading">GRL-Safety</h1>
+        <p class="hero-subtitle">
+          GRL-Safety provides a comprehensive safety benchmark for graph representation learning on text-attributed graphs under one evaluation protocol.
+        </p>
+      </div>
+    </div>
+
+    <!-- <div class="hero-actions">
+      <ul class="hero-links" aria-label="Paper and code quick links">
+        <li>
+          <a class="pill pill-primary" href="https://openreview.net/forum?id=6dFrUSgvzE" rel="noopener noreferrer" target="_blank"
+            >OpenReview</a
+          >
+        </li>
+        <li>
+          <a class="pill" href="https://openreview.net/pdf?id=6dFrUSgvzE" rel="noopener noreferrer" target="_blank">PDF</a>
+        </li>
+        <li>
+          <a class="pill" href="https://anonymous.4open.science/r/GRL-Safety-D5B1/README.md" rel="noopener noreferrer" target="_blank"
+            >Benchmark README</a
+          >
+        </li>
+        <li><a class="pill" href="https://github.com/shawnspitzel/GFM-Safety">GitHub</a></li>
+      </ul>
+    </div> -->
+
+    <main id="main" class="page-main">
+      <div class="page-sections">
+        <section id="overview" class="content-card content-section" aria-labelledby="what-h">
+          <h2 id="what-h">What is GRL-Safety?</h2>
+          <div class="intro-prose">
+            <p>
+              <strong>GRL-Safety</strong> is a benchmark to evaluate how reliably graph models behave when deployment conditions drift or controlled stress tests probe
+              weaknesses. It evaluates <strong>twelve</strong> graph representation methods on <strong>twenty-five</strong> text-attributed graphs spanning node classification, link prediction, and graph classification.
+            </p>
+            <!-- <p>
+              The design keeps each method’s <em>native</em> pretraining and adaptation recipe (including a shared nine-graph
+              pretraining corpus where applicable) while holding evaluation <em>constant</em>: the same datasets, splits, stress
+              operators, seeds, and axis-level metrics, so scores are comparable across families without forcing a single training
+              template on every model.
+            </p> -->
+            <p class="axes-lead">The benchmark is organized around <strong>five safety axes</strong>:</p>
+            <ul class="axis-list">
+              <li><strong>Corruption</strong> — feature noise and structure noise; accuracy or AUC drop versus clean runs.</li>
+              <li>
+                <strong>Out-of-distribution (OOD)</strong> — degree, temporal, scaffold, and inductive-entity shifts; ID–OOD gaps
+                and ranking metrics on knowledge-graph tasks.
+              </li>
+              <li><strong>Imbalance</strong> — long-tail node classification; balanced accuracy, macro-F1, and recall.</li>
+              <li><strong>Fairness</strong> — structural and demographic slices; disparity and utility-style gaps per protocol.</li>
+              <li><strong>Interpretation</strong> — saliency and ablation-style probes; GraphFramEx fidelity on supported methods.</li>
+            </ul>
+            <!-- <p class="intro-note">
+              <strong>GFM-Safety</strong> (this site and <a href="https://github.com/shawnspitzel/GFM-Safety">repository</a>) is a
+              companion stack for shared pretraining and configuration; safety tables and evaluation CLIs follow the anonymous
+              benchmark release linked above. Per-method axis coverage follows Table A.1 in the paper.
+            </p> -->
+          </div>
+          <!-- <p class="publication-line">
+            Publication:
+            <cite>On the Safety of Graph Representation Learning</cite>
+            —
+            <a href="https://openreview.net/forum?id=6dFrUSgvzE" rel="noopener noreferrer" target="_blank">OpenReview</a>
+            ·
+            <a href="https://openreview.net/pdf?id=6dFrUSgvzE" rel="noopener noreferrer" target="_blank">PDF</a>
+          </p> -->
+        </section>
+
+        <section id="framework-overview" class="content-card content-section" aria-labelledby="fo-h">
+          <h2 id="fo-h">Framework overview</h2>
+          <div class="intro-prose framework-supplement">
+            <p>
+              <strong>Stage (1)</strong> ties together the data and task
+              surface (25 text-attributed graphs), the standardized method scope (four tiers, twelve models, shared SBERT
+              features, nine-graph pretraining where used), and the five safety axes you read in the list above.
+              <strong>Stage (2)</strong> shows how those pieces feed a single evaluation loop: unified inputs, per-method
+              adaptation, axis-specific stress tests, per-condition metrics, per-axis safety reports, and finally a compact
+              cross-axis readout of how design choices interact with stress.
+            </p>
+          </div>
+
+          <figure class="diagram framework-figure">
+            <img
+              src="figures/framework-overview.png"
+              width="1024"
+              height="576"
+              alt="Two-part framework from the paper. Top: twenty-five text-attributed graphs and tasks, twelve methods in four tiers with shared text features and nine pretraining graphs, and five safety axes. Bottom: unified evaluation pipeline through stress tests and metrics to per-axis reports and cross-axis insights."
+              decoding="async"
+              loading="eager"
+            />
+            <!-- <figcaption>
+              Figure from <cite>On the Safety of Graph Representation Learning</cite>
+              (<a href="https://openreview.net/pdf?id=6dFrUSgvzE" rel="noopener noreferrer" target="_blank">OpenReview PDF</a>).
+            </figcaption> -->
+          </figure>
+        </section>
+
+        <!-- <section id="benchmark" class="content-card content-section bleed" aria-labelledby="bench-h">
+          <h2 id="bench-h">Benchmark at a glance</h2>
+          <figure class="diagram">
+            <img src="figures/benchmark-flow.svg" width="920" height="280" alt="Flow from TAG inputs and SBERT features through twelve methods to five safety axes." decoding="async" loading="lazy" />
+            <figcaption>Standardized splits, stress operators, and metrics—while keeping each method’s native pretrain / finetune path.</figcaption>
+          </figure>
+        </section> -->
+
+        <section id="axes" class="content-card content-section bleed" aria-labelledby="axes-h">
+          <h2 id="axes-h">Safety axes</h2>
+          <figure class="diagram">
+            <img src="figures/safety-axes-grid.svg" width="900" height="140" alt="Five tiles for corruption, OOD, imbalance, fairness, and interpretation with headline metrics." decoding="async" loading="lazy" />
+            <figcaption>Per-method coverage follows Table A.1 in the paper; topology-only and LLM tiers participate on subsets of axes.</figcaption>
+          </figure>
+        </section>
+
+        <section id="sample-results" class="content-card content-section" aria-labelledby="sr-h">
+          <h2 id="sr-h">Sample results</h2>
+          <div class="results-figures">
+            <figure class="diagram result-figure">
+              <img
+                src="figures/result-ood-temporal-arxiv.png"
+                width="864"
+                height="720"
+                alt="Horizontal bar chart: temporal OOD shift on arXiv, ID minus OOD accuracy drop in points for twelve methods sorted ascending, with ID to OOD score annotations."
+                decoding="async"
+                loading="lazy"
+              />
+              <figcaption>Temporal shift on arXiv: ID−OOD drop (points), twelve methods sorted by Δ.</figcaption>
+            </figure>
+            <figure class="diagram result-figure">
+              <img
+                src="figures/result-fairness-structural-2x2.png"
+                width="1024"
+                height="353"
+                alt="Two by two grid of bar charts: structural fairness head versus tail accuracy gap on Cora, PubMed, WikiCS, and ElePhoto for twelve models."
+                decoding="async"
+                loading="lazy"
+              />
+              <figcaption>Structural fairness: head–tail disparity across Cora, PubMed, WikiCS, and ElePhoto.</figcaption>
+            </figure>
+            <figure class="diagram result-figure">
+              <img
+                src="figures/result-imbalance-2x2.png"
+                width="1024"
+                height="257"
+                alt="Two by two grid: minor-class recall bars and major-class recall lines for twelve models on Cora, Citeseer, WikiCS, and Elec-Computers."
+                decoding="async"
+                loading="lazy"
+              />
+              <figcaption>Imbalance axis: minor-class recall (bars) and major-class recall (lines) on four node datasets.</figcaption>
+            </figure>
+            <figure class="diagram result-figure">
+              <img
+                src="figures/result-corruption-wikics-cora.png"
+                width="1024"
+                height="312"
+                alt="Four line panels: accuracy versus feature noise and structure noise on WikiCS and Cora for twelve models."
+                decoding="async"
+                loading="lazy"
+              />
+              <figcaption>Corruption: accuracy vs. feature noise (σ) and structure noise (ρ) on WikiCS and Cora.</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <!-- <section id="datasets" class="content-card content-section bleed" aria-labelledby="datasets-h">
+          <h2 id="datasets-h">Evaluation graphs</h2>
+          <figure class="diagram">
+            <img src="figures/datasets-domain.svg" width="640" height="268" alt="Bar chart of twenty-five datasets by domain and task type." decoding="async" loading="lazy" />
+            <figcaption>All node/edge/atom text is embedded with Sentence-BERT (768-d). See the benchmark README for the full per-dataset list.</figcaption>
+          </figure>
+        </section> -->
+
+        <!-- <section id="getting-started" class="content-card content-section" aria-labelledby="gs-h">
+          <h2 id="gs-h">Quick start (this repo)</h2>
+          <pre><code>git clone https://github.com/shawnspitzel/GFM-Safety.git
+cd GFM-Safety
+python pretrain.py --model bgrl --dataset roman_empire</code></pre>
+          <p class="fineprint">Configs under <code>train/configs/</code>. Evaluation entry points: <code>python -m sgb.models…run_*.py</code> in the anonymous benchmark tree.</p>
+        </section> -->
+
+        <section id="citation" class="content-card content-section" aria-labelledby="cite-h">
+          <h2 id="cite-h">Citation</h2>
+          <pre><code>@inproceedings{grl-safety,
+  title     = {On the Safety of Graph Representation Learning},
+  author    = {TBD},
+  booktitle = {OpenReview},
+  year      = {2026},
+  url       = {https://openreview.net/forum?id=6dFrUSgvzE}
+}</code></pre>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

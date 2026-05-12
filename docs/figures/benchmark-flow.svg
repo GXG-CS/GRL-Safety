@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 280" role="img" aria-labelledby="bf-title bf-desc">
+  <title id="bf-title">GRL-Safety evaluation flow</title>
+  <desc id="bf-desc">Text-attributed graphs with SBERT features feed twelve methods evaluated along five safety axes.</desc>
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e8eef6"/>
+      <stop offset="100%" stop-color="#dce8f4"/>
+    </linearGradient>
+    <filter id="s" x="-2%" y="-2%" width="104%" height="104%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <rect width="920" height="280" fill="#fafbfc"/>
+  <g filter="url(#s)">
+    <rect x="24" y="48" width="200" height="184" rx="8" fill="url(#g1)" stroke="#9bb3d4" stroke-width="1.25"/>
+  </g>
+  <text x="124" y="78" text-anchor="middle" font-family="system-ui,Segoe UI,sans-serif" font-size="14" font-weight="700" fill="#1a2a3d">TAG inputs</text>
+  <text x="124" y="100" text-anchor="middle" font-family="system-ui,Segoe UI,sans-serif" font-size="11" fill="#3d4f63">25 eval graphs</text>
+  <text x="124" y="118" text-anchor="middle" font-family="system-ui,Segoe UI,sans-serif" font-size="11" fill="#3d4f63">(TSGFM / TAGLAS)</text>
+  <rect x="44" y="132" width="160" height="36" rx="4" fill="#fff" stroke="#c5d3e6"/>
+  <text x="124" y="155" text-anchor="middle" font-family="system-ui,Segoe UI,sans-serif" font-size="12" font-weight="600" fill="#1a2a3d">SBERT to 768-d</text>
+  <text x="124" y="198" text-anchor="middle" font-family="system-ui,Segoe UI,sans-serif" font-size="10" fill="#5a6b7d">+ 9-graph pretrain</text>
+  <text x="124" y="214" text-anchor="middle" font-family="system-ui,Segoe UI,sans-serif" font-size="10" fill="#5a6b7d">corpus (SSL / GFMs)</text>
+  <path d="M 232 140 L 268 140" stroke="#4a6fa5" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <polygon points="276,140 266,134 266,146" fill="#4a6fa5"/>
+  <g filter="url(#s)">
+    <rect x="284" y="40" width="300" height="200" rx="8" fill="#f4f7fb" stroke="#8aa3c4" stroke-width="1.25"/>
+  </g>
+  <text x="434" y="68" text-anchor="middle" font-family="system-ui,Segoe UI,sans-serif" font-size="14" font-weight="700" fill="#1a2a3d">12 methods (4 tiers)</text>
+  <text x="304" y="94" font-family="system-ui,Segoe UI,sans-serif" font-size="10.5" fill="#3d5166">Topology: DeepWalk, Node2vec</text>
+  <text x="304" y="112" font-family="system-ui,Segoe UI,sans-serif" font-size="10.5" fill="#3d5166">Supervised: GCN, GAT, GraphSAGE</text>
+  <text x="304" y="130" font-family="system-ui,Segoe UI,sans-serif" font-size="10.5" fill="#3d5166">SSL: BGRL, GraphMAE</text>
+  <text x="304" y="148" font-family="system-ui,Segoe UI,sans-serif" font-size="10.5" fill="#3d5166">GFM: GFT, GIT, UniGraph2, OFA, LLaGA</text>
+  <text x="304" y="178" font-family="system-ui,Segoe UI,sans-serif" font-size="10" fill="#5a6b7d">Native pretrain + downstream</text>
+  <text x="304" y="194" font-family="system-ui,Segoe UI,sans-serif" font-size="10" fill="#5a6b7d">pipelines per method</text>
+  <text x="304" y="220" font-family="system-ui,Segoe UI,sans-serif" font-size="10" fill="#5a6b7d">Mean +/- std, n=5 seeds</text>
+  <path d="M 590 140 L 626 140" stroke="#4a6fa5" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <polygon points="634,140 624,134 624,146" fill="#4a6fa5"/>
+  <g filter="url(#s)">
+    <rect x="642" y="40" width="254" height="200" rx="8" fill="#eef6f3" stroke="#7aab98" stroke-width="1.25"/>
+  </g>
+  <text x="769" y="68" text-anchor="middle" font-family="system-ui,Segoe UI,sans-serif" font-size="14" font-weight="700" fill="#1a2a3d">5 safety axes</text>
+  <text x="658" y="94" font-family="ui-monospace,Menlo,Consolas,monospace" font-size="10" fill="#2d4a3f">corruption, OOD, imbalance</text>
+  <text x="658" y="110" font-family="ui-monospace,Menlo,Consolas,monospace" font-size="10" fill="#2d4a3f">fairness, interpretation</text>
+  <text x="658" y="140" font-family="system-ui,Segoe UI,sans-serif" font-size="10" fill="#3d5c50">NC / LP / GC tasks, shared splits</text>
+  <text x="658" y="158" font-family="system-ui,Segoe UI,sans-serif" font-size="10" fill="#3d5c50">stress ops + axis metrics</text>
+  <text x="658" y="188" font-family="system-ui,Segoe UI,sans-serif" font-size="10" fill="#5a6b7d">Details: paper PDF +</text>
+  <text x="658" y="204" font-family="system-ui,Segoe UI,sans-serif" font-size="10" fill="#5a6b7d">anonymous benchmark README</text>
+</svg>

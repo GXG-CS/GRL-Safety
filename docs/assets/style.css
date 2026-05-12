@@ -1,0 +1,600 @@
+/* Minimal project page — plain layout, light structure, no JS */
+
+:root {
+  --text: #1a1a1a;
+  --muted: #555;
+  --link: #0645ad;
+  --link-visited: #0b0080;
+  --border: #ccc;
+  --border-strong: #aaa;
+  --code-bg: #f5f5f5;
+  --section-bg: #fafafa;
+  --max: min(52rem, 100%);
+  --header-offset: 5.5rem;
+  --pill-bg: #eef2f8;
+  --pill-border: #c5d0e0;
+  --page-bg: #e8eaed;
+  --hero-blue: #1565c0;
+  --hero-blue-deep: #0d47a1;
+  --card-radius: 10px;
+  --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --card-border: 1px solid rgba(0, 0, 0, 0.06);
+  --card-pad-x: 1.35rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0 1.25rem 3rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--page-bg);
+}
+
+a {
+  color: var(--link);
+}
+
+a:visited {
+  color: var(--link-visited);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 0.5rem;
+  z-index: 20;
+  padding: 0.35rem 0.65rem;
+  background: #fff;
+  border: 1px solid var(--border);
+}
+
+/* ——— Top navigation ——— */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #fff;
+  border-bottom: 1px solid var(--border-strong);
+  margin: 0 -1.25rem;
+  padding: 0 1.25rem;
+}
+
+.site-header-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0.65rem 0 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+}
+
+.header-nav-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 0.65rem 1.25rem;
+}
+
+.nav-onpage .nav-list {
+  font-size: 0.8rem;
+}
+
+.site-brand {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--text);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+  padding: 0.15rem 0;
+}
+
+.site-brand:hover,
+.site-brand:focus-visible {
+  color: var(--link);
+}
+
+.nav-groups {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 1.25rem 2rem;
+}
+
+.nav-group {
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.nav-label {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 0.3rem;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.65rem;
+  font-size: 0.88rem;
+}
+
+.nav-list a {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.nav-list a:hover {
+  border-bottom-color: currentColor;
+}
+
+.nav-sep {
+  width: 1px;
+  align-self: stretch;
+  min-height: 2.25rem;
+  background: var(--border);
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .nav-sep {
+    display: block;
+  }
+}
+
+/* ——— Main column ——— */
+
+main,
+footer {
+  max-width: var(--max);
+  margin: 0 auto;
+}
+
+/* ——— DecodingTrust-style hero band ——— */
+
+.hero-banner {
+  margin: 0 -1.25rem;
+  padding: 2.25rem 1.25rem 2.5rem;
+  background: linear-gradient(165deg, var(--hero-blue) 0%, var(--hero-blue-deep) 100%);
+  text-align: center;
+}
+
+.hero-banner-inner {
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.hero-subtitle {
+  margin: 0.85rem 0 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.94);
+  max-width: 38rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-actions {
+  margin: 0 -1.25rem;
+  padding: 1rem 1.25rem 1.25rem;
+  background: var(--page-bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-actions .hero-links {
+  max-width: var(--max);
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.page-main {
+  padding-top: 0.25rem;
+}
+
+.eyebrow {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin: 0 0 0.5rem;
+}
+
+.eyebrow cite {
+  font-style: normal;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 0.95rem;
+}
+
+.subtitle {
+  font-size: 1.05rem;
+  color: var(--muted);
+  margin: 0 0 1rem;
+  font-style: normal;
+  max-width: 40rem;
+  line-height: 1.55;
+}
+
+.tagline {
+  font-size: 1.05rem;
+  color: var(--text);
+  margin: 0 0 1rem;
+  max-width: 42rem;
+  line-height: 1.58;
+}
+
+.tagline cite {
+  font-style: italic;
+}
+
+.tagline strong {
+  font-weight: 600;
+}
+
+.hero-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.5rem;
+}
+
+.hero-links a {
+  text-decoration: none;
+}
+
+.pill {
+  display: inline-block;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid var(--pill-border);
+  background: var(--pill-bg);
+  color: var(--text);
+}
+
+.pill:hover,
+.pill:focus-visible {
+  border-color: var(--link);
+  color: var(--link);
+}
+
+.pill-primary {
+  background: #e8f0fc;
+  border-color: #8aaee0;
+}
+
+.pill-primary:hover,
+.pill-primary:focus-visible {
+  background: #dce8f8;
+}
+
+.page-sections {
+  padding-top: 0.35rem;
+}
+
+.content-section {
+  scroll-margin-top: var(--header-offset);
+}
+
+.content-card {
+  padding: 1.35rem var(--card-pad-x) 1.5rem;
+  margin: 1rem 0;
+  background: #fff;
+  border: var(--card-border);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  text-align: left;
+}
+
+.content-card > h2 {
+  margin-top: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #111;
+  border-bottom-color: #ddd;
+  text-align: left;
+}
+
+.content-card.bleed {
+  padding-left: var(--card-pad-x);
+  padding-right: var(--card-pad-x);
+}
+
+.content-section > h2 {
+  margin-top: 0;
+}
+
+.intro-prose {
+  max-width: none;
+  width: 100%;
+  text-align: left;
+}
+
+.intro-prose p {
+  margin: 0.55rem 0 0.75rem;
+}
+
+.intro-prose p:first-child {
+  margin-top: 0;
+}
+
+.axes-lead {
+  margin-top: 1rem !important;
+  margin-bottom: 0.35rem !important;
+}
+
+.axis-list {
+  margin: 0 0 0.75rem;
+  padding-left: 1.35rem;
+}
+
+.axis-list li {
+  margin: 0.35rem 0;
+  line-height: 1.45;
+}
+
+.intro-note {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-top: 0.85rem !important;
+}
+
+.publication-line {
+  margin: 1.25rem 0 0;
+  padding: 0.75rem 1rem;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: #333;
+  background: linear-gradient(90deg, #f8f6ef 0%, #faf8f2 100%);
+  border: 1px solid #e6e0d4;
+  border-radius: 6px;
+}
+
+.publication-line cite {
+  font-style: italic;
+}
+
+.framework-supplement p {
+  font-size: 0.98rem;
+}
+
+.callout {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 1rem 0 0;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+}
+
+.callout-note {
+  background: #fffbeb;
+  border: 1px solid #f5e0a8;
+  border-left: 4px solid #e6a700;
+  color: #3d3500;
+}
+
+.callout-note a {
+  font-weight: 500;
+}
+
+.figure-section-title {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.5rem;
+  padding: 0;
+  border: none;
+  color: var(--text);
+}
+
+h1 {
+  font-size: 1.85rem;
+  font-weight: normal;
+  line-height: 1.25;
+}
+
+h1.hero-title {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: clamp(2rem, 5vw, 2.65rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: #fff;
+}
+
+h2 {
+  font-size: 1.2rem;
+  font-weight: normal;
+  margin: 0 0 0.65rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--border);
+}
+
+h3 {
+  font-size: 1.02rem;
+  font-weight: bold;
+  margin: 1.1rem 0 0.35rem;
+}
+
+p {
+  margin: 0.6rem 0;
+}
+
+ul {
+  margin: 0.45rem 0;
+  padding-left: 1.5rem;
+}
+
+li {
+  margin: 0.2rem 0;
+}
+
+code {
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  font-size: 0.88em;
+  background: var(--code-bg);
+  padding: 0.1em 0.35em;
+}
+
+pre {
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  background: #fff;
+  border: 1px solid var(--border);
+  padding: 0.85rem 1rem;
+  overflow-x: auto;
+  margin: 0.65rem 0 0;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+  margin: 0.65rem 0 0;
+  background: #fff;
+}
+
+th,
+td {
+  border: 1px solid var(--border);
+  padding: 0.4rem 0.55rem;
+  vertical-align: top;
+}
+
+th {
+  background: #f0f0f0;
+  font-weight: 600;
+  text-align: left;
+}
+
+.figure-note {
+  font-size: 0.92rem;
+  color: var(--muted);
+  border: 1px dashed var(--border-strong);
+  padding: 0.85rem 1rem;
+  margin: 0.65rem 0 0;
+  background: #fff;
+}
+
+figure.diagram {
+  margin: 0.5rem 0 0;
+  padding: 0;
+}
+
+figure.diagram img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+figure.framework-figure img {
+  max-width: 100%;
+  margin: 0;
+}
+
+figure.diagram figcaption {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 0.55rem;
+  line-height: 1.45;
+  max-width: none;
+  text-align: left;
+}
+
+.section-lead {
+  margin: 0.35rem 0 1rem;
+  text-align: left;
+  line-height: 1.55;
+  max-width: none;
+}
+
+.results-figures figure.diagram + figure.diagram {
+  margin-top: 1.75rem;
+}
+
+.results-figures figure.diagram {
+  text-align: left;
+}
+
+.content-card pre {
+  text-align: left;
+}
+
+.pdf-toolbar {
+  margin: 0 0 0.65rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.pdf-toolbar a {
+  text-decoration: none;
+}
+
+.fineprint {
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin-top: 0.5rem;
+}
+
+footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+footer p {
+  margin: 0.4rem 0;
+}
